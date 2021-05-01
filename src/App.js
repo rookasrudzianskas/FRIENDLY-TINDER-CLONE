@@ -39,10 +39,10 @@ export default App;
 
 
 
-{/*    end of Header*/}
-
-{/*    Tinder Cards     */}
-{/*    Buttons below the tinder cards    */}
-
-{/*    Chats screen, then we click on the top right icon    */}
-{/*    Individual chat screen   */}
+// {/*    end of Header*/}
+//
+// {/*    Tinder Cards     */}
+// {/*    Buttons below the tinder cards    */}
+//
+// {/*    Chats screen, then we click on the top right icon    */}
+// {/*    Individual chat screen   */}
