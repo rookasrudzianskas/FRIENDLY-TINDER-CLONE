@@ -20,16 +20,16 @@ const TinderCards = () => {
     return (
         <div>
             {/* we go per each person in people, and render the Tinder Card */}
-            {people.map((person) => {
+            {people.map((person) => (
                 // key is required as the unique intensifier for each object
-                <TinderCard className="swipe" key={person.name}>
+                <TinderCard className="swipe" key={person.name} preventSwipe={['up', 'down']}>
                     <div
                         style={{ backgroundImage: `url(${person.url})`}}
                         className="card">
                         <h3>{person.name}</h3>
                     </div>
                 </TinderCard>
-            })}
+            ))}
         </div>
     )
 }
