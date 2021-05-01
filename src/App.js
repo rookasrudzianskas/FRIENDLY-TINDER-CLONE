@@ -1,4 +1,5 @@
 import './App.css';
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -6,6 +7,9 @@ function App() {
       <h1>Hello, Tinder Clone 🚀</h1>
 
     {/*    Header   */}
+        <Header />
+    {/*    end of Header*/}
+
     {/*    Tinder Cards     */}
     {/*    Buttons below the tinder cards    */}
 
