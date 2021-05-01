@@ -19,6 +19,7 @@ const TinderCards = () => {
 
     return (
         <div>
+            <div className="tinderCards__cardContainer">
             {/* we go per each person in people, and render the Tinder Card */}
             {people.map((person) => (
                 // key is required as the unique intensifier for each object
@@ -31,6 +32,7 @@ const TinderCards = () => {
                     </div>
                 </TinderCard>
             ))}
+            </div>
         </div>
     )
 }
