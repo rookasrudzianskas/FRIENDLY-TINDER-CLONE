@@ -22,6 +22,7 @@ const TinderCards = () => {
             {/* we go per each person in people, and render the Tinder Card */}
             {people.map((person) => (
                 // key is required as the unique intensifier for each object
+                // preventSwipe, takes the aray of the sides you do not want the app to let you to swipe in
                 <TinderCard className="swipe" key={person.name} preventSwipe={['up', 'down']}>
                     <div
                         style={{ backgroundImage: `url(${person.url})`}}
