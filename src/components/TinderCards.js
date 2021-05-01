@@ -9,19 +9,26 @@ const TinderCards = () => {
     const [people, setPeople] = useState([
         {
         name: "Rokas Rudzianskas",
-        url: ,
+        url: 'https://pbs.twimg.com/profile_banners/1335523704227454976/1610913501/1500x500',
         },
         {
-            name: "Rokas Rudzianskas",
-            url: ,
-        }
+            name: "Mark Zuckerberg",
+            url: 'https://i.insider.com/5ec7fcf62618b96a58135c38?width=700',
+        },
     ]);
 
     return (
         <div>
             {/* we go per each person in people, and render the Tinder Card */}
             {people.map((person) => {
-                <TinderCard />
+                // key is required as the unique intensifier for each object
+                <TinderCard className="swipe" key={person.name}>
+                    <div
+                        style={{ backgroundImage: `url(${person.url})`}}
+                        className="card">
+                        <h3>{person.name}</h3>
+                    </div>
+                </TinderCard>
             })}
         </div>
     )
