@@ -1,6 +1,8 @@
 import './App.css';
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TinderCard from "react-tinder-card";
+import TinderCards from "./components/TinderCards";
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
 
 
                 <Route path="/">
-                    <h1>I am hompage</h1>
+                    <TinderCards />
                 </Route>
 
             </Switch>
