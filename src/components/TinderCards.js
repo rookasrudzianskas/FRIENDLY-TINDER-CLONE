@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./styles/TinderCards.css";
 import TinderCard from "react-tinder-card";
-
+import database from "../firebase";
 
 const TinderCards = () => {
     // State with array of many people on the cards
@@ -16,6 +16,14 @@ const TinderCards = () => {
             url: 'https://i.insider.com/5ec7fcf62618b96a58135c38?width=700',
         },
     ]);
+
+    // Piece of code which runs on the condition
+    useEffect(() => {
+        // this is there the code runs
+        // this will run once then the component loads and never ever again
+
+
+    }, []);
 
     return (
         <div>
