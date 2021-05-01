@@ -6,22 +6,24 @@ import database from "../firebase";
 const TinderCards = () => {
     // State with array of many people on the cards
     // from there the mapping function will take a person info, each object is one person
-    const [people, setPeople] = useState([
-        {
-        name: "Rokas Rudzianskas",
-        url: 'https://pbs.twimg.com/profile_banners/1335523704227454976/1610913501/1500x500',
-        },
-        {
-            name: "Mark Zuckerberg",
-            url: 'https://i.insider.com/5ec7fcf62618b96a58135c38?width=700',
-        },
-    ]);
+    const [people, setPeople] = useState([]);
 
     // Piece of code which runs on the condition
     useEffect(() => {
         // this is there the code runs
         // this will run once then the component loads and never ever again
-
+        // to connect to the database collection called people
+        // I want to listen to everything what changes in people -> documents, we add the listener to listen for all changes
+        // we get an access there to the documents in people collection
+        // snapshot captures all the things which are in the people collection and return as the snapshot, so in this case
+        // alll three in the people collection
+        // snapshot.docs are the people objects inside, that .docs, is the objects with AutoIDS in the people collection
+        // we capture the database, go to the autoIDs objects and go per each one, and take all the data assosiated with that ID!
+        // data is Jeff Bezos and the url for example
+        database.collection('people').onSnapshot(snapshot => (
+            // and we set all the people with auto IDS to the state people here, using the setPeople
+            setPeople(snapshot.docs.map(doc => doc.data()))
+        ))
 
     }, []);
 
