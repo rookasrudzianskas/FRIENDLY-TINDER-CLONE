@@ -24,7 +24,7 @@ const ChatScreen = () => {
 
     return (
         <div className="chatScreen">
-            <h1>Rokas</h1>
+            <p>YOU MATCHED WITH ROKAS ON 10/09/21</p>
         </div>
     )
 }
