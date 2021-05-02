@@ -20,10 +20,17 @@ const TinderCards = () => {
         // snapshot.docs are the people objects inside, that .docs, is the objects with AutoIDS in the people collection
         // we capture the database, go to the autoIDs objects and go per each one, and take all the data assosiated with that ID!
         // data is Jeff Bezos and the url for example
-        database.collection('people').onSnapshot(snapshot => (
+        const unsubscribe = database.collection('people').onSnapshot(snapshot => (
             // and we set all the people with auto IDS to the state people here, using the setPeople
             setPeople(snapshot.docs.map(doc => doc.data()))
-        ))
+        ));
+
+        // this is going to run everytime after the snapshot is fired because of the change
+        return () => {
+            // this is the cleanup function
+            // now this just unsubscribe the current listener before attaching the new one
+            unsubscribe();
+        }
 
     }, []);
 
