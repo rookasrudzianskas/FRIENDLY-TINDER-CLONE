@@ -4,16 +4,22 @@ import PersonIcon from '@material-ui/icons/Person';
 import ForumIcon from '@material-ui/icons/Forum';
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import {IconButton} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 
 // ES6 ARROW Functions
 const Header = ({ backButton }) => {
+    // it gives us the browser history, and stores in the variable const history, your website session history, how many times and where you
+    // been on the website
+    const history = useHistory();
+
     return (
         <div className="header">
             {/* we are saying if we are passing the backbutton prop, then we render back button, otherwise, just keep it person icon*/}
             {backButton ? (
-                <IconButton>
+                // onclick uses the arrow function, to take the hisitory variable, in which the session info is stored, and then replace it with
+                // url the backbutton prop has, in this case, it is the home url /, so it goes home
+                <IconButton onClick={() => history.replace(backButton)}>
                     <ArrowBackIosIcon fontSize="large" className="header__icon" />
                 </IconButton>
             ) : (

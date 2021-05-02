@@ -5,6 +5,8 @@ import TinderCard from "react-tinder-card";
 
 import TinderCards from "./components/TinderCards";
 import SwipeButtons from "./components/SwipeButtons";
+import {Chat} from "@material-ui/icons";
+import Chats from "./components/Chats";
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
                     {/* backbutton is going to take to home*/}
                     <Header backButton="/"/>
 
-                    <h1>I am chatpage</h1>
+                    <Chats />
                 </Route>
 
 
