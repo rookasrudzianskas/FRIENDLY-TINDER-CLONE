@@ -7,6 +7,7 @@ import TinderCards from "./components/TinderCards";
 import SwipeButtons from "./components/SwipeButtons";
 import {Chat} from "@material-ui/icons";
 import Chats from "./components/Chats";
+import ChatScreen from "./components/ChatScreen";
 
 function App() {
   return (
@@ -15,6 +16,15 @@ function App() {
         <Router>
 
             <Switch>
+
+                {/* any value can go here, : this means any value after /chat/*/}
+                <Route path="/chat/:person">
+
+                    {/*    Header   */}
+                    {/* backbutton is going to take to home*/}
+                    <Header backButton="/chat"/>
+                    <ChatScreen />
+                </Route>
 
                 <Route path="/chat">
 
