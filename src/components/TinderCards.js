@@ -29,6 +29,8 @@ const TinderCards = () => {
         return () => {
             // this is the cleanup function
             // now this just unsubscribe the current listener before attaching the new one
+            // becasuse they can drain your application
+            // we are calling the function unsubscribe to reattach the listener and then attach the new one
             unsubscribe();
         }
 

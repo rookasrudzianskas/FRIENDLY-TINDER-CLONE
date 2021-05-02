@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TinderCard from "react-tinder-card";
 
 import TinderCards from "./components/TinderCards";
+import SwipeButtons from "./components/SwipeButtons";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
                 <Route path="/">
                     <TinderCards />
+                    <SwipeButtons />
                 </Route>
 
             </Switch>
