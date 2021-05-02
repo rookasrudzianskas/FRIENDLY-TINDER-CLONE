@@ -25,18 +25,25 @@ const ChatScreen = () => {
 
     return (
         <div className="chatScreen">
-            <p>YOU MATCHED WITH ROKAS ON 10/09/21</p>
+            <p className="chatScreen__timestamp">YOU MATCHED WITH ROKAS ON 10/09/21</p>
             {/* this one is looping per messages state and then we go per ech iteration, we show from the each message, the message key value*/}
             {/* means, the message itself*/}
             {messages.map(message => (
-                <div className="chatScreen_message">
-                    <Avatar
-                        className="chatScreen__avatar"
-                        alt={message.name}
-                        src={message.image}
-                    />
-                    <p>{message.message}</p>
-                </div>
+                // we are checking if the name is passed in the object, if not, so it is not the message from us
+                message.name ? (
+                    <div className="chatScreen_message">
+                        <Avatar
+                            className="chatScreen__avatar"
+                            alt={message.name}
+                            src={message.image}
+                        />
+                        <p className="chatScreen__text">{message.message}</p>
+                    </div>
+                    ) : (
+                    <div className="chatScreen__message">
+                        <p className="chatScreen__textUser">{message.message}</p>
+                    </div>
+                )
             ))}
         </div>
     );
