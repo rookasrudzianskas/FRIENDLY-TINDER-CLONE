@@ -1,8 +1,8 @@
 import React from "react";
 
-const Chat = () => {
+const Chat = ({ name, message, profilePic, timestamp }) => {
     return (
-        <div>
+        <div className="chat" >
 
         </div>
     )
