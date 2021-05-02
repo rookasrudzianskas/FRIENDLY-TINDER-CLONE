@@ -11,17 +11,24 @@ function App() {
     <div className="app">
 
         <Router>
-            {/*    Header   */}
-            <Header />
 
             <Switch>
 
                 <Route path="/chat">
+
+                    {/*    Header   */}
+                    {/* backbutton is going to take to home*/}
+                    <Header backButton="/"/>
+
                     <h1>I am chatpage</h1>
                 </Route>
 
 
                 <Route path="/">
+
+                    {/*    Header   */}
+                    <Header />
+
                     <TinderCards />
                     <SwipeButtons />
                 </Route>
